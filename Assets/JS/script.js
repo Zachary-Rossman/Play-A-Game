@@ -11,6 +11,12 @@ let choices = ['Rock', 'Paper', 'Scissors'];
 let playGame = function() {
     alert ("Do you want to play a game?  👿")
     let userChoice = window.prompt("Enter the word Rock, Paper , or Scissors");
+    // Check user choice
+    if (userChoice !== `Rock` && userChoice !== `Paper` && userChoice !== `Scissors`) {
+        window.alert(`Hey dummy, pick the right letter. You lost!`);
+        losses++
+        playGame();
+    }
     // Generate random choice
     let index = Math.floor(Math.random() * choices.length);
     let computerChoice = choices[index];
